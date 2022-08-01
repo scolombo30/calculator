@@ -1,4 +1,4 @@
 # Calculator
-This is the last project of the OdinProject 'Foundations'
-&nbspIt consists of an online calculator
-&nbsp https://scolombo30.github.io/calculator/
+This is the last project of the OdinProject 'Foundations' \
+It consists of an online calculator \
+https://scolombo30.github.io/calculator/
