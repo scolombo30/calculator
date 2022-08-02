@@ -1,3 +1,8 @@
-let button= document.querySelectorAll('.button');
+let buttons= document.querySelectorAll('.button');
 
-console.log(button);
+buttons.forEach(function(button){
+    button.addEventListener('click', function(e){
+        console.log(button.id);
+    }
+    )
+})
