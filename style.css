@@ -1,5 +1,11 @@
 body{
     margin: 0px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 .container{
     display: flex;
@@ -18,6 +24,7 @@ body{
     padding-left: 10px;
     padding-right: 12px;
     border: 5px solid rgb(40, 39, 39);
+    font-family: 'Press Start 2P', cursive;
 }
 .containerButtons{
     display: flex;
@@ -31,7 +38,7 @@ body{
 .button{
     width: 23%;
     height: 10%;
-    border : 1px solid black;
+    outline : 1px solid black;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -40,6 +47,8 @@ body{
     padding-bottom: 5px;
     box-shadow: 3px 4px rgb(70, 69, 69);
     background-color: antiquewhite;
+    font-size: 25px;
+    
 }
 .button:hover{
     background-color: rgb(199, 182, 159);
@@ -48,12 +57,13 @@ body{
     background-color: #cd5454;
     box-shadow: 2px 2px rgb(70, 69, 69);
     transform: translateY(2px);
+    color: white;
 }
 .display{
     width: 95%;
     height: 15%;
     padding-right: 5%;
-    border : 1px solid black;
+    outline : 1px solid black;
     background-color: antiquewhite;
     border-radius: 12px;
     display: flex;
@@ -63,15 +73,11 @@ body{
     font-size: 30px;
     font-weight: bold;
     margin-top: 10px;
+    user-select: text;
 }
 #canc{
     width: 48%;
 }
-
-
-
-
-
 .footer{
     background-color: black;
     color: white;
