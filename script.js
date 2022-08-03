@@ -30,7 +30,7 @@ function updateDisplay(number){
     }
     
     if (number === '+'|| number === '-'|| number === '*'|| number === '/'){
-        operator === undefined ? operator = number : doCalculation(display);
+        operator === undefined||operator==='' ? operator = number : doCalculation(display);
         operator = number;
         display.textContent = number;
     }
@@ -51,7 +51,7 @@ function doCalculation(display){
         case '/': display.textContent = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
             break;
     }
-   
+    console.log(display.textContent<0);
     num1 = parseFloat(display.textContent);
     num2 = 0;
     operator = '';
