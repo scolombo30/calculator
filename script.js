@@ -40,6 +40,7 @@ function updateDisplay(number){
     }
 
 function doCalculation(display){
+    
     switch (operator) {
         case '+': display.textContent = (parseFloat(num1) + parseFloat(num2)).toFixed(2);
             break;
@@ -50,10 +51,11 @@ function doCalculation(display){
         case '/': display.textContent = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
             break;
     }
-    num1 = display.textContent;
+   
+    num1 = parseFloat(display.textContent);
     num2 = 0;
     operator = '';
-    console.log(num1);
+    console.log(num1+ ' nuovo num1');
 }    
 
 function returnNumberOrSymbol(id){
