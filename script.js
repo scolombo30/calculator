@@ -3,7 +3,6 @@ let num1, num2, operator;
 
 buttons.forEach(function(button){
     button.addEventListener('click', function(e){
-        console.log(returnNumberOrSymbol(button.id));
         updateDisplay(returnNumberOrSymbol(button.id));
     }
     )
@@ -16,6 +15,7 @@ function updateDisplay(number){
         return;
     }
     if (number === 'DEL'){
+        //controllare se il numero è quello dato in input o risultato dell'operazione
         display.textContent = display.textContent.slice(0, -1);
         return;
     }
@@ -25,10 +25,31 @@ function updateDisplay(number){
     (typeof(number)=== 'number')||(number==='.'&& !display.textContent.includes('.'))? 
     display.textContent += number : null;
     if (number === '+'|| number === '-'|| number === '*'|| number === '/'){
+        num1===undefined? num1 = display.textContent : doCalculation(display);   
+
+        operator = number;
         display.textContent = number;
+    }
+    if (number === '='){
+        doCalculation(display);
     }   
     }
 
+function doCalculation(display){
+    num2 = display.textContent;
+    switch (operator) {
+        case '+': display.textContent = parseFloat(num1) + parseFloat(num2);
+            break;
+        case '-': display.textContent = parseFloat(num1) - parseFloat(num2);
+            break;
+        case '*': display.textContent = parseFloat(num1) * parseFloat(num2);
+            break;
+        case '/': display.textContent = parseFloat(num1) / parseFloat(num2);
+            break;
+    }
+    num1 = display.textContent;
+    console.log(num1);
+}    
 
 function returnNumberOrSymbol(id){
     switch (id) {
