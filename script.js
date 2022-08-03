@@ -41,13 +41,13 @@ function updateDisplay(number){
 
 function doCalculation(display){
     switch (operator) {
-        case '+': display.textContent = parseFloat(num1) + parseFloat(num2);
+        case '+': display.textContent = (parseFloat(num1) + parseFloat(num2)).toFixed(2);
             break;
-        case '-': display.textContent = parseFloat(num1) - parseFloat(num2);
+        case '-': display.textContent = (parseFloat(num1) - parseFloat(num2)).toFixed(2);
             break;
-        case '*': display.textContent = parseFloat(num1) * parseFloat(num2);
+        case '*': display.textContent = (parseFloat(num1) * parseFloat(num2)).toFixed(2);
             break;
-        case '/': display.textContent = parseFloat(num1) / parseFloat(num2);
+        case '/': display.textContent = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
             break;
     }
     num1 = display.textContent;
