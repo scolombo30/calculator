@@ -10,9 +10,24 @@ buttons.forEach(function(button){
 
 function updateDisplay(number){
     let display = document.querySelector('.display');
+    if (number === 'C'){
+        display.textContent = '';
+        return;
+    }
+    if (number === 'DEL'){
+        display.textContent = display.textContent.slice(0, -1);
+        return;
+    }
+    if (display.textContent.includes('+')||display.textContent.includes('-')||display.textContent.includes('*')||display.textContent.includes('/')){
+        display.textContent = '';
+    }
     (typeof(number)=== 'number')||(number==='.'&& !display.textContent.includes('.'))? 
     display.textContent += number : null;
-}
+    if (number === '+'|| number === '-'|| number === '*'|| number === '/'){
+        display.textContent = number;
+    }   
+    }
+
 
 function returnNumberOrSymbol(id){
     switch (id) {
