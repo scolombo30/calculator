@@ -12,21 +12,25 @@ function updateDisplay(number){
     let display = document.querySelector('.display');
     if (number === 'C'){
         display.textContent = '';
+        num1=undefined;
+        num2=undefined;
+        operator=undefined;
         return;
     }
     if (number === 'DEL'){
-        //controllare se il numero è quello dato in input o risultato dell'operazione
         display.textContent = display.textContent.slice(0, -1);
         return;
     }
     if (display.textContent.includes('+')||display.textContent.includes('-')||display.textContent.includes('*')||display.textContent.includes('/')){
         display.textContent = '';
     }
-    (typeof(number)=== 'number')||(number==='.'&& !display.textContent.includes('.'))? 
-    display.textContent += number : null;
+    if((typeof(number)=== 'number')||(number==='.'&& !display.textContent.includes('.'))){
+        display.textContent += number;
+        operator===undefined? num1 = display.textContent : num2 = display.textContent;
+    }
+    
     if (number === '+'|| number === '-'|| number === '*'|| number === '/'){
-        num1===undefined? num1 = display.textContent : doCalculation(display);   
-
+        operator === undefined ? operator = number : doCalculation(display);
         operator = number;
         display.textContent = number;
     }
@@ -36,7 +40,6 @@ function updateDisplay(number){
     }
 
 function doCalculation(display){
-    num2 = display.textContent;
     switch (operator) {
         case '+': display.textContent = parseFloat(num1) + parseFloat(num2);
             break;
@@ -48,6 +51,8 @@ function doCalculation(display){
             break;
     }
     num1 = display.textContent;
+    num2 = 0;
+    operator = '';
     console.log(num1);
 }    
 
