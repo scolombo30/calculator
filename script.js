@@ -35,8 +35,13 @@ function updateDisplay(number){
         display.textContent = number;
     }
     if (number === '='){
-        doCalculation(display);
-    }   
+        if ((operator !== undefined||operator!=='') && (num2!==0)){
+            doCalculation(display);
+        }
+        else {
+            display.textContent = num1;
+        }
+    }
     }
 
 function doCalculation(display){
@@ -50,8 +55,8 @@ function doCalculation(display){
             break;
         case '/': result = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
             break;
+        case '': result = parseFloat(num1).toFixed(2);
     }
-    console.log(Number.isInteger(parseFloat(result)));
     Number.isInteger(parseFloat(result))? display.textContent = parseInt(result) : display.textContent = result;
     num1 = parseFloat(display.textContent);
     num2 = 0;
