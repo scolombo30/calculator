@@ -40,21 +40,23 @@ function updateDisplay(number){
     }
 
 function doCalculation(display){
-    
+    let result;
     switch (operator) {
-        case '+': display.textContent = (parseFloat(num1) + parseFloat(num2)).toFixed(2);
+        case '+': result = (parseFloat(num1) + parseFloat(num2)).toFixed(2);
             break;
-        case '-': display.textContent = (parseFloat(num1) - parseFloat(num2)).toFixed(2);
+        case '-': result = (parseFloat(num1) - parseFloat(num2)).toFixed(2);
             break;
-        case '*': display.textContent = (parseFloat(num1) * parseFloat(num2)).toFixed(2);
+        case '*': result = (parseFloat(num1) * parseFloat(num2)).toFixed(2);
             break;
-        case '/': display.textContent = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
+        case '/': result = (parseFloat(num1) / parseFloat(num2)).toFixed(2);
             break;
     }
-    console.log(display.textContent<0);
+    console.log(Number.isInteger(parseFloat(result)));
+    Number.isInteger(parseFloat(result))? display.textContent = parseInt(result) : display.textContent = result;
     num1 = parseFloat(display.textContent);
     num2 = 0;
     operator = '';
+    result = 0;
     console.log(num1+ ' nuovo num1');
 }    
 
