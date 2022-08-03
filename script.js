@@ -1,4 +1,5 @@
 let buttons= document.querySelectorAll('.button');
+let num1, num2, operator;
 
 buttons.forEach(function(button){
     button.addEventListener('click', function(e){
